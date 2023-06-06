@@ -6,7 +6,7 @@ Created on Mon Jun  5 16:12:15 2023
 """
 
 import numpy as np
-import Sistema as sis
+import Sistema as sys
 import matplotlib.pyplot as plt
 
 # Função do método de Gauss-Jacobi
@@ -30,25 +30,24 @@ def gauss_jacobi(A, b, x0, max_iter=10, tolerancia=0.001):
 
 # Questão B
 # Escolha de 10 diferentes valores de x0
-x0_valores = np.random.rand(10, len(sis.b))
+x0_valores = np.random.rand(10, len(sys.b))
 
 # Soluções e erros usando o método de Gauss-Jacobi
 solucoes = []
 erros = []
 
 for x0 in x0_valores:
-    solucao, erro = gauss_jacobi(sis.A, sis.b, x0)
+    solucao, erro = gauss_jacobi(sys.A, sys.b, x0)
     solucoes.append(solucao)
     erros.append(erro)
 
-# Exibindo as soluções
-for i, solucao in enumerate(solucoes):
-    print(f"Solução {i+1}: {solucao}")
+# Exibindo os x0
+print(x0_valores)
 
 # Plotando os gráficos de iterações para o método de Gauss-Jacobi
 plt.figure(figsize=(10, 10))
 for i in range(len(x0_valores)):
-    plt.plot(range(len(erros[i])), erros[i], label=f'X0={x0_valores[i]}')
+    plt.plot(range(len(erros[i])), erros[i], label=f'Solução {i+1}: {solucoes[i]}')
 plt.xlabel('Iteração')
 plt.ylabel('Erro')
 plt.title('Gráfico de Iterações - Gauss-Jacobi')
