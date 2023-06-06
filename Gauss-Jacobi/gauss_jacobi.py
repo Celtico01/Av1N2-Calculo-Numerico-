@@ -30,6 +30,7 @@ def gauss_jacobi(A, b, x0, max_iter=10, tolerancia=0.001):
 
 # Questão B
 # Escolha de 10 diferentes valores de x0
+np.random.seed(42)
 x0_valores = np.random.rand(10, len(sys.b))
 
 # Soluções e erros usando o método de Gauss-Jacobi

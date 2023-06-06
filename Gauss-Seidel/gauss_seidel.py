@@ -26,6 +26,7 @@ def gauss_seidel(A, b, x0, max_iter=100, error=0.001):
     return x, errors
 
 # Chutes iniciais
+np.random.seed(44)
 x0_valores = np.random.rand(10, len(sys.b))
 
 # Soluções e erros usando o método de Gauss-Seidel
