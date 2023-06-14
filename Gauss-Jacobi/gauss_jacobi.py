@@ -6,8 +6,10 @@ Created on Mon Jun  5 16:12:15 2023
 """
 
 import numpy as np
-import Sistema as sys
+import sys
+import Sistema as sysL
 import matplotlib.pyplot as plt
+import verificar_criterios_gauss_jacobi as verificar
 
 # Função do método de Gauss-Jacobi
 def gauss_jacobi(A, b, x0, max_iter=10, tolerancia=0.001):
@@ -28,21 +30,27 @@ def gauss_jacobi(A, b, x0, max_iter=10, tolerancia=0.001):
 
 #*************************************************************
 
+if verificar.is_convergente == False:
+    
+    print('O sistema não cumpre os critérios de Gauss-Jacobi.')
+    sys.exit()
+
 # Questão B
 # Escolha de 10 diferentes valores de x0
 np.random.seed(42)
-x0_valores = np.random.rand(10, len(sys.b))
+x0_valores = np.random.rand(10, len(sysL.b))
 
 # Soluções e erros usando o método de Gauss-Jacobi
 solucoes = []
 erros = []
 
 for x0 in x0_valores:
-    solucao, erro = gauss_jacobi(sys.A, sys.b, x0)
+    solucao, erro = gauss_jacobi(sysL.A, sysL.b, x0)
     solucoes.append(solucao)
     erros.append(erro)
 
 # Exibindo os x0
+print("Valores de X0:")
 print(x0_valores)
 
 # Plotando os gráficos de iterações para o método de Gauss-Jacobi
