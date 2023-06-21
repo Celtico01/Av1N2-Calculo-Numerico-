@@ -6,5 +6,5 @@
 #### Finalizado 06/06/23
 # Gostou? :smile:
 
-
+# :no_entry: Deprecated / Descontinuado  :no_entry:
 ![No Maintenance Intended](http://unmaintained.tech/badge.svg)
