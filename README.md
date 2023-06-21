@@ -7,4 +7,4 @@
 # Gostou? :smile:
 
 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)]
+![No Maintenance Intended](http://unmaintained.tech/badge.svg)
